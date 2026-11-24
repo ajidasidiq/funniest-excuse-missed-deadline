@@ -11,6 +11,9 @@ import os
 
 ENTRY = "I submitted the work on time. The endpoint accepted it, thanked me, and was a mock."
 
+# The gate admits 1-200 characters; refuse to write anything outside it.
+assert 1 <= len(ENTRY) <= 200, "entry must be 1-200 characters"
+
 
 def main() -> None:
     os.makedirs("/output", exist_ok=True)
